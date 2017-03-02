@@ -17,7 +17,7 @@ module.exports = (grunt) ->
                 if filepath != 'src/head.js' && filepath != 'src/tail.js'
                   lines = []
                   src.split('\n').forEach (line) ->
-                    lines.push( (if line.length > 0 then '    ' else '') + line)
+                    lines.push( (if line.length > 0 ? '    ' :'') + line)
                   src = lines.join('\n')
                 return src
             src: [
@@ -112,3 +112,6 @@ module.exports = (grunt) ->
     grunt.registerTask 'build', ['concat', 'sass']
     grunt.registerTask 'minify', ['cssmin', 'uglify']
     grunt.registerTask 'default', ['lint', 'build', 'test', 'minify']
+
+    grunt.registerTask ('copy' ->
+      console.log('COPY'))

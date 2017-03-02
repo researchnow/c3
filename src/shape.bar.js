@@ -23,11 +23,16 @@ c3_chart_internal_fn.updateTargetsForBar = function (targets) {
 
 };
 c3_chart_internal_fn.updateBar = function (durationForExit) {
+
+	console.log('update !');
+
     var $$ = this,
         barData = $$.barData.bind($$),
         classBar = $$.classBar.bind($$),
         initialOpacity = $$.initialOpacity.bind($$),
-        color = function (d) { return $$.color(d.id); };
+        color = function (d) {
+			console.log('get color');
+    	return $$.color(d.id); };
     $$.mainBar = $$.main.selectAll('.' + CLASS.bars).selectAll('.' + CLASS.bar)
         .data(barData);
     $$.mainBar.enter().append('path')
@@ -41,6 +46,7 @@ c3_chart_internal_fn.updateBar = function (durationForExit) {
         .remove();
 };
 c3_chart_internal_fn.redrawBar = function (drawBar, withTransition) {
+	console.log('redraw');
     return [
         (withTransition ? this.mainBar.transition(Math.random().toString()) : this.mainBar)
             .attr('d', drawBar)

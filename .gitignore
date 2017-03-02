@@ -9,3 +9,21 @@ build
 
 # coverage report
 /coverage
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+*.yml
+*.iml
+.idea
+/.idea
+.idea/UI-X.iml
+*.lnk
+ebuild.bat
+c3.js
+
+c3.min.js
